@@ -1,0 +1,2731 @@
+{
+  "evaluation_info": {
+    "timestamp": "2025-09-25T16:50:38.723429",
+    "config_file": "../configs/salila_config_real_mock.yaml",
+    "total_queries": 36,
+    "evaluation_duration": 144.23849700000002
+  },
+  "overall_metrics": {
+    "total_queries": 36,
+    "syntax_accuracy": {
+      "mean": 1.0,
+      "valid_rate": 1.0
+    },
+    "semantic_similarity": {
+      "mean": 0.974366830924243
+    },
+    "retrieval_recall": {
+      "table_recall_mean": 0.9722222222222222,
+      "column_recall_mean": 0.7222222222222222,
+      "key_column_recall_mean": 0.7222222222222222,
+      "weighted_recall_mean": 0.9722222222222222,
+      "overall_recall_mean": 0.9722222222222222,
+      "table_analysis": {
+        "total_expected": 36,
+        "total_retrieved": 53,
+        "total_matched": 35,
+        "overall_precision": 0.660377358490566,
+        "overall_recall": 0.9722222222222222,
+        "most_missed_tables": [
+          [
+            "category",
+            1
+          ]
+        ]
+      },
+      "column_analysis": {
+        "total_expected": 46,
+        "total_retrieved": 319,
+        "total_matched": 44,
+        "overall_precision": 0.13793103448275862,
+        "overall_recall": 0.9565217391304348,
+        "most_missed_columns": [
+          [
+            "name",
+            1
+          ],
+          [
+            "category_id",
+            1
+          ]
+        ]
+      },
+      "key_column_analysis": {
+        "total_expected": 34,
+        "total_matched": 33,
+        "overall_recall": 0.9705882352941176,
+        "average_coverage": 0.6319444444444444,
+        "most_missed_key_columns": [
+          [
+            "category_id",
+            1
+          ]
+        ]
+      },
+      "sql_type_analysis": {
+        "type_distribution": {
+          "SELECT": 9,
+          "INSERT": 9,
+          "UPDATE": 9,
+          "DELETE": 9
+        },
+        "type_performance": {
+          "SELECT": {
+            "count": 9,
+            "average_score": 0.8888888888888888,
+            "min_score": 0.0,
+            "max_score": 1.0
+          },
+          "INSERT": {
+            "count": 9,
+            "average_score": 1.0,
+            "min_score": 1.0,
+            "max_score": 1.0
+          },
+          "UPDATE": {
+            "count": 9,
+            "average_score": 1.0,
+            "min_score": 1.0,
+            "max_score": 1.0
+          },
+          "DELETE": {
+            "count": 9,
+            "average_score": 1.0,
+            "min_score": 1.0,
+            "max_score": 1.0
+          }
+        }
+      }
+    },
+    "weighted_overall_score": 0.9839767159439395
+  },
+  "detailed_results": [
+    {
+      "id": 1,
+      "question": "List all actors with their IDs and names.",
+      "expected_sql": "SELECT actor_id, first_name, last_name FROM actor;",
+      "generated_sql": "SELECT actor_id, first_name, last_name FROM actor;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999993,
+        "embedding_similarity": 0.9999999999999992,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 4,
+          "matched_count": 3,
+          "missing_columns": [],
+          "extra_columns": [
+            "last_update"
+          ],
+          "precision": 0.75,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.3333333333333333,
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "first_name",
+            "actor_id",
+            "last_name",
+            "actor"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 9.150562
+    },
+    {
+      "id": 2,
+      "question": "Add a new actor named 'John Doe'.",
+      "expected_sql": "INSERT INTO actor (first_name, last_name) VALUES ('John', 'Doe');",
+      "generated_sql": "INSERT INTO actor (first_name, last_name) VALUES ('John', 'Doe');",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 4,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "actor_id",
+            "last_update",
+            "last_name"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "actor"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.884436
+    },
+    {
+      "id": 3,
+      "question": "Update the last name of actor with ID 1 to 'Smith'.",
+      "expected_sql": "UPDATE actor SET last_name = 'Smith' WHERE actor_id = 1;",
+      "generated_sql": "UPDATE actor SET last_name = 'Smith' WHERE actor_id = 1;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000002,
+        "embedding_similarity": 1.0000000000000004,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 4,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "last_name",
+            "last_update"
+          ],
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "actor_id",
+            "actor"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.910619
+    },
+    {
+      "id": 4,
+      "question": "Delete the actor with ID 2.",
+      "expected_sql": "DELETE FROM actor WHERE actor_id = 2;",
+      "generated_sql": "DELETE FROM actor WHERE actor_id = 2;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000002,
+        "embedding_similarity": 1.0000000000000004,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 4,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "last_name",
+            "last_update"
+          ],
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "actor_id",
+            "actor"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.797375
+    },
+    {
+      "id": 5,
+      "question": "Show all films and their descriptions.",
+      "expected_sql": "SELECT film_id, title, description FROM film;",
+      "generated_sql": "SELECT film_id, title, description FROM film;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 12,
+          "matched_count": 3,
+          "missing_columns": [],
+          "extra_columns": [
+            "replacement_cost",
+            "original_language_id",
+            "rating",
+            "length",
+            "rental_duration",
+            "rental_rate",
+            "release_year",
+            "language_id",
+            "last_update"
+          ],
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.3333333333333333,
+          "precision": 0.08333333333333333,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "title",
+            "description",
+            "film",
+            "film_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.492437
+    },
+    {
+      "id": 6,
+      "question": "Insert a new film titled 'New Movie' in language 1.",
+      "expected_sql": "INSERT INTO film (title, language_id) VALUES ('New Movie', 1);",
+      "generated_sql": "INSERT INTO film (title, language_id) VALUES ('New Movie', 1);",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999996,
+        "embedding_similarity": 0.9999999999999993,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 12,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "title",
+            "original_language_id",
+            "rating",
+            "description",
+            "replacement_cost",
+            "length",
+            "rental_duration",
+            "rental_rate",
+            "release_year",
+            "film_id",
+            "language_id",
+            "last_update"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "film"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.642423
+    },
+    {
+      "id": 7,
+      "question": "Change the rating of film ID 3 to 'PG-13'.",
+      "expected_sql": "UPDATE film SET rating = 'PG-13' WHERE film_id = 3;",
+      "generated_sql": "UPDATE film SET rating = 'PG-13' WHERE film_id = 3;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000002,
+        "embedding_similarity": 1.0000000000000004,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 12,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "title",
+            "original_language_id",
+            "rating",
+            "description",
+            "replacement_cost",
+            "length",
+            "rental_duration",
+            "rental_rate",
+            "release_year",
+            "language_id",
+            "last_update"
+          ],
+          "precision": 0.08333333333333333,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.08333333333333333,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "film",
+            "film_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.645516
+    },
+    {
+      "id": 8,
+      "question": "Remove the film with ID 4.",
+      "expected_sql": "DELETE FROM film WHERE film_id = 4;",
+      "generated_sql": "DELETE FROM film WHERE film_id = 4;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999996,
+        "embedding_similarity": 0.9999999999999996,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 12,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "title",
+            "original_language_id",
+            "rating",
+            "description",
+            "replacement_cost",
+            "length",
+            "rental_duration",
+            "rental_rate",
+            "release_year",
+            "language_id",
+            "last_update"
+          ],
+          "precision": 0.08333333333333333,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.08333333333333333,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "film",
+            "film_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.800789
+    },
+    {
+      "id": 9,
+      "question": "Retrieve all categories.",
+      "expected_sql": "SELECT category_id, name FROM category;",
+      "generated_sql": "SELECT category_id, name FROM category;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 0.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 0.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 3,
+          "matched_count": 0,
+          "missing_tables": [
+            "category"
+          ],
+          "extra_tables": [
+            "customer",
+            "film",
+            "actor"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "column_analysis": {
+          "expected_count": 2,
+          "retrieved_count": 9,
+          "matched_count": 0,
+          "missing_columns": [
+            "name",
+            "category_id"
+          ],
+          "extra_columns": [
+            "first_name",
+            "description",
+            "address_id",
+            "active",
+            "actor_id",
+            "last_name",
+            "film_id",
+            "language_id",
+            "create_date"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [
+            "category_id"
+          ],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 0.0,
+          "critical_elements_found": [],
+          "critical_elements_missing": [
+            "name",
+            "category",
+            "category_id"
+          ]
+        },
+        "weighted_recall": 0.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.619005
+    },
+    {
+      "id": 10,
+      "question": "Add a new category 'Horror'.",
+      "expected_sql": "INSERT INTO category (name) VALUES ('Horror');",
+      "generated_sql": "INSERT INTO category (name) VALUES ('Horror');",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999993,
+        "embedding_similarity": 0.9999999999999991,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 3,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "name",
+            "last_update",
+            "category_id"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "category"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.856492
+    },
+    {
+      "id": 11,
+      "question": "Rename category ID 5 to 'Thriller'.",
+      "expected_sql": "UPDATE category SET name = 'Thriller' WHERE category_id = 5;",
+      "generated_sql": "UPDATE category SET name = 'Thriller' WHERE category_id = 5;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000002,
+        "embedding_similarity": 1.0000000000000004,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 3,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "name",
+            "last_update"
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "category",
+            "category_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.515701
+    },
+    {
+      "id": 12,
+      "question": "Delete category with ID 6.",
+      "expected_sql": "DELETE FROM category WHERE category_id = 6;",
+      "generated_sql": "DELETE FROM category WHERE category_id = 6;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999998,
+        "embedding_similarity": 0.9999999999999997,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 3,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "name",
+            "last_update"
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "category",
+            "category_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.99936
+    },
+    {
+      "id": 13,
+      "question": "List all customers with their store and email.",
+      "expected_sql": "SELECT customer_id, store_id, email FROM customer;",
+      "generated_sql": "SELECT c.customer_id, c.first_name, c.last_name, c.store_id, c.email FROM customer c;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.7849048919151852,
+        "embedding_similarity": 0.8355784170216933,
+        "structural_similarity": 0.6666666666666666,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "store"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 10,
+          "matched_count": 3,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "address_id",
+            "active",
+            "manager_staff_id",
+            "last_name",
+            "last_update",
+            "create_date"
+          ],
+          "precision": 0.3,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 2,
+          "retrieved_count": 2,
+          "matched_count": 2,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.6666666666666666,
+          "precision": 0.2,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "customer_id",
+            "email",
+            "customer",
+            "store_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.010014
+    },
+    {
+      "id": 14,
+      "question": "Create a new customer for store 1 named 'Alice Brown'.",
+      "expected_sql": "INSERT INTO customer (store_id, first_name, last_name, create_date, address_id, active) VALUES (1, 'Alice', 'Brown', NOW(), 1, 1);",
+      "generated_sql": "INSERT INTO customer (store_id, first_name, last_name, email, address_id, active, create_date) VALUES (1, 'Alice', 'Brown', NULL, 1, 1, NOW());",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.978949246737292,
+        "embedding_similarity": 0.9699274953389886,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "store"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 10,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "customer_id",
+            "last_name",
+            "manager_staff_id",
+            "store_id",
+            "last_update",
+            "create_date"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "customer"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.787685
+    },
+    {
+      "id": 15,
+      "question": "Update email of customer ID 10 to 'newemail@example.com'.",
+      "expected_sql": "UPDATE customer SET email = 'newemail@example.com' WHERE customer_id = 10;",
+      "generated_sql": "UPDATE customer SET email = 'newemail@example.com' WHERE customer_id = 10;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999420139787771,
+        "embedding_similarity": 0.9999171628268244,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 9,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "last_name",
+            "store_id",
+            "last_update",
+            "create_date"
+          ],
+          "precision": 0.1111111111111111,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.1111111111111111,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "customer_id",
+            "customer"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.56738
+    },
+    {
+      "id": 16,
+      "question": "Remove customer with ID 11.",
+      "expected_sql": "DELETE FROM customer WHERE customer_id = 11;",
+      "generated_sql": "DELETE FROM customer WHERE customer_id = 11;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 9,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "last_name",
+            "store_id",
+            "last_update",
+            "create_date"
+          ],
+          "precision": 0.1111111111111111,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.1111111111111111,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "customer_id",
+            "customer"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.707221
+    },
+    {
+      "id": 17,
+      "question": "Show inventory items for film ID 5.",
+      "expected_sql": "SELECT inventory_id, film_id, store_id FROM inventory WHERE film_id = 5;",
+      "generated_sql": "SELECT inventory_id, store_id, film_id, last_update FROM inventory WHERE film_id = 5;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.8874808719206617,
+        "embedding_similarity": 0.9464012456009454,
+        "structural_similarity": 0.75,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "film"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 14,
+          "matched_count": 3,
+          "missing_columns": [],
+          "extra_columns": [
+            "title",
+            "original_language_id",
+            "rating",
+            "description",
+            "replacement_cost",
+            "length",
+            "rental_duration",
+            "rental_rate",
+            "release_year",
+            "language_id",
+            "last_update"
+          ],
+          "precision": 0.21428571428571427,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 3,
+          "matched_count": 3,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.21428571428571427,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "film_id",
+            "inventory_id",
+            "inventory",
+            "store_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.912514
+    },
+    {
+      "id": 18,
+      "question": "Add a new inventory item for film 5 in store 2.",
+      "expected_sql": "INSERT INTO inventory (film_id, store_id) VALUES (5, 2);",
+      "generated_sql": "INSERT INTO inventory (film_id, store_id) VALUES (5, 2);",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999996807662317,
+        "embedding_similarity": 0.9999995439517595,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 3,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "film",
+            "store"
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 16,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "original_language_id",
+            "rating",
+            "rental_rate",
+            "release_year",
+            "film_id",
+            "last_update",
+            "title",
+            "replacement_cost",
+            "description",
+            "address_id",
+            "length",
+            "rental_duration",
+            "inventory_id",
+            "manager_staff_id",
+            "store_id",
+            "language_id"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "inventory"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.006915
+    },
+    {
+      "id": 19,
+      "question": "Update the store of inventory ID 20 to store 3.",
+      "expected_sql": "UPDATE inventory SET store_id = 3 WHERE inventory_id = 20;",
+      "generated_sql": "UPDATE inventory SET store_id = 3 WHERE inventory_id = 20;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999996,
+        "embedding_similarity": 0.9999999999999993,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "store"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 6,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "address_id",
+            "manager_staff_id",
+            "store_id",
+            "film_id",
+            "last_update"
+          ],
+          "precision": 0.16666666666666666,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.16666666666666666,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "inventory_id",
+            "inventory"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.710698
+    },
+    {
+      "id": 20,
+      "question": "Delete inventory record with ID 21.",
+      "expected_sql": "DELETE FROM inventory WHERE inventory_id = 21;",
+      "generated_sql": "DELETE FROM inventory WHERE inventory_id = 21;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0000000000000002,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 4,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "last_update",
+            "store_id",
+            "film_id"
+          ],
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "inventory_id",
+            "inventory"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.251834
+    },
+    {
+      "id": 21,
+      "question": "List recent rentals with rental date and customer.",
+      "expected_sql": "SELECT rental_id, rental_date, customer_id FROM rental ORDER BY rental_date DESC LIMIT 10;",
+      "generated_sql": "SELECT r.rental_date, c.first_name, c.last_name \nFROM rental r \nJOIN customer c ON r.customer_id = c.customer_id \nORDER BY r.rental_date DESC;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.7407988060974563,
+        "embedding_similarity": 0.7725697229963663,
+        "structural_similarity": 0.6666666666666666,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "customer"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 14,
+          "matched_count": 3,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "last_name",
+            "inventory_id",
+            "staff_id",
+            "store_id",
+            "last_update",
+            "create_date",
+            "return_date"
+          ],
+          "precision": 0.21428571428571427,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 2,
+          "retrieved_count": 2,
+          "matched_count": 2,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.6666666666666666,
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "customer_id",
+            "rental_id",
+            "rental",
+            "rental_date"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.095719
+    },
+    {
+      "id": 22,
+      "question": "Record a new rental for inventory 15 by customer 5.",
+      "expected_sql": "INSERT INTO rental (rental_date, inventory_id, customer_id, staff_id) VALUES (NOW(), 15, 5, 1);",
+      "generated_sql": "INSERT INTO rental (rental_date, inventory_id, customer_id, staff_id) VALUES (NOW(), 15, 5, 1);",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999996,
+        "embedding_similarity": 0.9999999999999996,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 3,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "inventory",
+            "customer"
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 15,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "customer_id",
+            "rental_id",
+            "rental_date",
+            "last_name",
+            "inventory_id",
+            "staff_id",
+            "store_id",
+            "film_id",
+            "last_update",
+            "create_date",
+            "return_date"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "rental"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.377429
+    },
+    {
+      "id": 23,
+      "question": "Update return date for rental ID 3 to current time.",
+      "expected_sql": "UPDATE rental SET return_date = NOW() WHERE rental_id = 3;",
+      "generated_sql": "UPDATE rental SET return_date = NOW() WHERE rental_id = 3;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999996,
+        "embedding_similarity": 0.9999999999999996,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 7,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "customer_id",
+            "rental_date",
+            "inventory_id",
+            "staff_id",
+            "last_update",
+            "return_date"
+          ],
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "rental_id",
+            "rental"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.690999
+    },
+    {
+      "id": 24,
+      "question": "Remove the rental record with ID 4.",
+      "expected_sql": "DELETE FROM rental WHERE rental_id = 4;",
+      "generated_sql": "DELETE FROM rental WHERE rental_id = 4;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000007,
+        "embedding_similarity": 1.000000000000001,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 7,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "customer_id",
+            "rental_date",
+            "inventory_id",
+            "staff_id",
+            "last_update",
+            "return_date"
+          ],
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "rental_id",
+            "rental"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.607477
+    },
+    {
+      "id": 25,
+      "question": "Show all payments with amount and date.",
+      "expected_sql": "SELECT payment_id, customer_id, amount, payment_date FROM payment;",
+      "generated_sql": "SELECT payment_id, amount, payment_date FROM payment;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9414347854360703,
+        "embedding_similarity": 0.9520496934801005,
+        "structural_similarity": 0.9166666666666666,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 4,
+          "retrieved_count": 7,
+          "matched_count": 4,
+          "missing_columns": [],
+          "extra_columns": [
+            "rental_id",
+            "last_update",
+            "staff_id"
+          ],
+          "precision": 0.5714285714285714,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 2,
+          "retrieved_count": 2,
+          "matched_count": 2,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.5,
+          "precision": 0.2857142857142857,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "payment_id",
+            "payment",
+            "customer_id",
+            "payment_date",
+            "amount"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.60321
+    },
+    {
+      "id": 26,
+      "question": "Add a payment of 9.99 for rental 3 by customer 5.",
+      "expected_sql": "INSERT INTO payment (customer_id, staff_id, rental_id, amount, payment_date) VALUES (5, 1, 3, 9.99, NOW());",
+      "generated_sql": "INSERT INTO payment (customer_id, staff_id, rental_id, amount, payment_date) VALUES (5, 1, 3, 9.99, NOW());",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 3,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "rental",
+            "customer"
+          ],
+          "precision": 0.3333333333333333,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 17,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "active",
+            "payment_date",
+            "amount",
+            "rental_id",
+            "rental_date",
+            "last_name",
+            "staff_id",
+            "last_update",
+            "return_date",
+            "payment_id",
+            "address_id",
+            "customer_id",
+            "inventory_id",
+            "store_id",
+            "create_date"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "payment"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.961341
+    },
+    {
+      "id": 27,
+      "question": "Change payment amount of payment ID 6 to 12.50.",
+      "expected_sql": "UPDATE payment SET amount = 12.50 WHERE payment_id = 6;",
+      "generated_sql": "UPDATE payment SET amount = 12.50 WHERE payment_id = 6;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000007,
+        "embedding_similarity": 1.0000000000000009,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 7,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "customer_id",
+            "payment_date",
+            "amount",
+            "rental_id",
+            "staff_id",
+            "last_update"
+          ],
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "payment_id",
+            "payment"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.944473
+    },
+    {
+      "id": 28,
+      "question": "Delete payment record with ID 7.",
+      "expected_sql": "DELETE FROM payment WHERE payment_id = 7;",
+      "generated_sql": "DELETE FROM payment WHERE payment_id = 7;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9999999999999998,
+        "embedding_similarity": 0.9999999999999997,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 7,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "customer_id",
+            "payment_date",
+            "amount",
+            "rental_id",
+            "staff_id",
+            "last_update"
+          ],
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.14285714285714285,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "payment_id",
+            "payment"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.661899
+    },
+    {
+      "id": 29,
+      "question": "List all staff with names and email.",
+      "expected_sql": "SELECT staff_id, first_name, last_name, email FROM staff;",
+      "generated_sql": "SELECT staff_id, first_name, last_name, email FROM staff;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000002,
+        "embedding_similarity": 1.0000000000000004,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 4,
+          "retrieved_count": 10,
+          "matched_count": 4,
+          "missing_columns": [],
+          "extra_columns": [
+            "address_id",
+            "active",
+            "username",
+            "picture",
+            "last_update",
+            "store_id"
+          ],
+          "precision": 0.4,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.25,
+          "precision": 0.1,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "first_name",
+            "email",
+            "last_name",
+            "staff_id",
+            "staff"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.845018
+    },
+    {
+      "id": 30,
+      "question": "Hire a new staff member 'Bob Lee' at store 1.",
+      "expected_sql": "INSERT INTO staff (first_name, last_name, address_id, store_id, active, username) VALUES ('Bob', 'Lee', 1, 1, 1, 'boblee');",
+      "generated_sql": "INSERT INTO staff (first_name, last_name, store_id, address_id, username, active) VALUES ('Bob', 'Lee', 1, 1, 'blee', 1);",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.9828393984156871,
+        "embedding_similarity": 0.975484854879553,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "store"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 11,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "username",
+            "last_name",
+            "manager_staff_id",
+            "staff_id",
+            "picture",
+            "last_update",
+            "store_id"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "staff"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.307761
+    },
+    {
+      "id": 31,
+      "question": "Deactivate staff with ID 2.",
+      "expected_sql": "UPDATE staff SET active = 0 WHERE staff_id = 2;",
+      "generated_sql": "UPDATE staff SET active = 0 WHERE staff_id = 2;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0000000000000002,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 10,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "username",
+            "last_name",
+            "picture",
+            "last_update",
+            "store_id"
+          ],
+          "precision": 0.1,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.1,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "staff_id",
+            "staff"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.434832
+    },
+    {
+      "id": 32,
+      "question": "Remove staff member with ID 3.",
+      "expected_sql": "DELETE FROM staff WHERE staff_id = 3;",
+      "generated_sql": "DELETE FROM staff WHERE staff_id = 3;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 10,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "username",
+            "last_name",
+            "picture",
+            "last_update",
+            "store_id"
+          ],
+          "precision": 0.1,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.1,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "staff_id",
+            "staff"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.488095
+    },
+    {
+      "id": 33,
+      "question": "Show all stores with manager and address.",
+      "expected_sql": "SELECT store_id, manager_staff_id, address_id FROM store;",
+      "generated_sql": "SELECT s.store_id, s.manager_staff_id, a.address, a.address2, a.district, a.postal_code, a.phone \nFROM store s \nJOIN address a ON s.address_id = a.address_id;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 0.7608562180053874,
+        "embedding_similarity": 0.801223168579125,
+        "structural_similarity": 0.6666666666666666,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "address"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 11,
+          "matched_count": 3,
+          "missing_columns": [],
+          "extra_columns": [
+            "phone",
+            "postal_code",
+            "district",
+            "address2",
+            "location",
+            "address",
+            "last_update",
+            "city_id"
+          ],
+          "precision": 0.2727272727272727,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 3,
+          "retrieved_count": 3,
+          "matched_count": 3,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.2727272727272727,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "SELECT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "manager_staff_id",
+            "address_id",
+            "store",
+            "store_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.225921
+    },
+    {
+      "id": 34,
+      "question": "Open a new store with manager 2 at address 3.",
+      "expected_sql": "INSERT INTO store (manager_staff_id, address_id) VALUES (2, 3);",
+      "generated_sql": "INSERT INTO store (manager_staff_id, address_id) VALUES (2, 3);",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0,
+        "embedding_similarity": 1.0,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 0.0,
+        "key_column_recall": 0.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "address"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 11,
+          "matched_count": 0,
+          "missing_columns": [],
+          "extra_columns": [
+            "phone",
+            "address_id",
+            "postal_code",
+            "district",
+            "address2",
+            "location",
+            "manager_staff_id",
+            "store_id",
+            "address",
+            "last_update",
+            "city_id"
+          ],
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "key_column_analysis": {
+          "expected_count": 0,
+          "retrieved_count": 0,
+          "matched_count": 0,
+          "missing_key_columns": [],
+          "key_column_coverage": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "INSERT",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "store"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.558478
+    },
+    {
+      "id": 35,
+      "question": "Change manager of store ID 2 to staff ID 4.",
+      "expected_sql": "UPDATE store SET manager_staff_id = 4 WHERE store_id = 2;",
+      "generated_sql": "UPDATE store SET manager_staff_id = 4 WHERE store_id = 2;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000004,
+        "embedding_similarity": 1.0000000000000007,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 2,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [
+            "staff"
+          ],
+          "precision": 0.5,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 11,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "first_name",
+            "email",
+            "address_id",
+            "active",
+            "username",
+            "last_name",
+            "manager_staff_id",
+            "staff_id",
+            "picture",
+            "last_update"
+          ],
+          "precision": 0.09090909090909091,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.09090909090909091,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "UPDATE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "store",
+            "store_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 3.946803
+    },
+    {
+      "id": 36,
+      "question": "Close (delete) store with ID 3.",
+      "expected_sql": "DELETE FROM store WHERE store_id = 3;",
+      "generated_sql": "DELETE FROM store WHERE store_id = 3;",
+      "execution_accuracy": {},
+      "syntax_accuracy": {
+        "syntax_accuracy": 1.0,
+        "is_valid": true,
+        "parse_error": null
+      },
+      "semantic_similarity": {
+        "semantic_similarity": 1.0000000000000002,
+        "embedding_similarity": 1.0000000000000004,
+        "structural_similarity": 1.0,
+        "error_message": null
+      },
+      "retrieval_recall": {
+        "table_recall": 1.0,
+        "column_recall": 1.0,
+        "key_column_recall": 1.0,
+        "overall_recall": 1.0,
+        "table_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_tables": [],
+          "extra_tables": [],
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 4,
+          "matched_count": 1,
+          "missing_columns": [],
+          "extra_columns": [
+            "manager_staff_id",
+            "last_update",
+            "address_id"
+          ],
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "key_column_analysis": {
+          "expected_count": 1,
+          "retrieved_count": 1,
+          "matched_count": 1,
+          "missing_key_columns": [],
+          "key_column_coverage": 1.0,
+          "precision": 0.25,
+          "recall": 1.0
+        },
+        "sql_type_analysis": {
+          "sql_type": "DELETE",
+          "type_specific_score": 1.0,
+          "critical_elements_found": [
+            "store",
+            "store_id"
+          ],
+          "critical_elements_missing": []
+        },
+        "weighted_recall": 1.0
+      },
+      "error_message": null,
+      "evaluation_time": 4.220066
+    }
+  ]
+}
