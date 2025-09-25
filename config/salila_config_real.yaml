@@ -6,11 +6,11 @@ evaluation:
 # 数据集配置
 dataset:
   # 使用转换后的Sakila数据集
-  test_file: "../datasets/sakila_real.json"
+  test_file: "../data/sakila_real.json"
   
   # 数据库知识库文件
-  ddl_file: "../Data/sakila/ddl_statements.yaml"
-  db_description_file: "../Data/sakila/db_description.yaml"
+  ddl_file: "../data/ddl_statements.yaml"
+  db_description_file: "../data/db_description.yaml"
 
 # 数据库连接配置（用于执行准确率测试）
 database:

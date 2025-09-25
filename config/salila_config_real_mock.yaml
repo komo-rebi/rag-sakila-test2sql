@@ -3,16 +3,16 @@ evaluation:
   name: "Sakila Text2SQL 真实数据评估（模拟模式）"
   description: "使用真实Sakila数据集进行Text2SQL系统评估，但不连接真实数据库"
   output_path: "../results"
-  dataset_path: "../datasets/sakila_real.json"
+  dataset_path: "../data/sakila_real.json"
   
 # 数据集配置
 dataset:
   # 使用转换后的Sakila数据集
-  test_file: "../datasets/sakila_real.json"
+  test_file: "../data/sakila_real.json"
   
   # 数据库知识库文件
-  ddl_file: "../Data/sakila/ddl_statements.yaml"
-  db_description_file: "../Data/sakila/db_description.yaml"
+  ddl_file: "../data/ddl_statements.yaml"
+  db_description_file: "../data/db_description.yaml"
 
 # 数据库连接配置（模拟模式）
 database:
